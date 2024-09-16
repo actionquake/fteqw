@@ -27,7 +27,7 @@ jobs:
           draft: false
           prerelease: false
           release_name: fteqw_${{ steps.version.outputs.short_sha }}
-          tag_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ steps.version.outputs.short_sha }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -81,7 +81,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           body_path: 
-          tag_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ steps.version.outputs.short_sha }}
           files: |
             fteqw-linux64.zip
             fteqw-macos-arm64.zip
