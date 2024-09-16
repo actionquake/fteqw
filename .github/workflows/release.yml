@@ -75,6 +75,7 @@ jobs:
           tag_name: ${{ steps.version.outputs.short_sha }}
           files: |
             make-linux64-${{ steps.version.outputs.short_sha }}.zip
+            make-linuxaarch64-${{ steps.version.outputs.short_sha }}.zip
             make-macos-arm64-${{ steps.version.outputs.short_sha }}.zip
             make-web-${{ steps.version.outputs.short_sha }}.zip
             make-win32-${{ steps.version.outputs.short_sha }}.zip
