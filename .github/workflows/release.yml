@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: actionquake/q2pro
+          repository: actionquake/fteqw
           ref: ${{ github.ref }}
 
       - name: version
