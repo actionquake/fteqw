@@ -35,44 +35,44 @@ jobs:
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: main.yml
-          name: make-web-${{ steps.version.outputs.short_sha }}
+          name: fteqw-web-${{ steps.version.outputs.short_sha }}
           skip_unpack: true
 
       - name: Download Linux x64 build artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: main.yml
-          name: make-linux64-${{ steps.version.outputs.short_sha }}
+          name: fteqw-linux64-${{ steps.version.outputs.short_sha }}
           skip_unpack: true
 
       - name: Download Win x64 build artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: main.yml
-          name: make-win64-${{ steps.version.outputs.short_sha }}
+          name: fteqw-win64-${{ steps.version.outputs.short_sha }}
           skip_unpack: true
 
       - name: Download Win x86 build artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: main.yml
-          name: make-win32-${{ steps.version.outputs.short_sha }}
+          name: fteqw-win32-${{ steps.version.outputs.short_sha }}
           skip_unpack: true 
 
       - name: Download Darwin arm64 build artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: main.yml
-          name: make-macos-arm64-${{ steps.version.outputs.short_sha }}
+          name: fteqw-macos-arm64-${{ steps.version.outputs.short_sha }}
           skip_unpack: true
 
       - name: Rename files for release
         run: |
-          mv make-linux64-${{ steps.version.outputs.short_sha }}.zip fteqw-linux64.zip
-          mv make-win64-${{ steps.version.outputs.short_sha }}.zip fteqw-win64.zip
-          mv make-win32-${{ steps.version.outputs.short_sha }}.zip fteqw-win32.zip
-          mv make-macos-arm64-${{ steps.version.outputs.short_sha }}.zip fteqw-macos-arm64.zip
-          mv make-web-${{ steps.version.outputs.short_sha }}.zip fteqw-web.zip
+          mv fteqw-linux64-${{ steps.version.outputs.short_sha }}.zip fteqw-linux64.zip
+          mv fteqw-win64-${{ steps.version.outputs.short_sha }}.zip fteqw-win64.zip
+          mv fteqw-win32-${{ steps.version.outputs.short_sha }}.zip fteqw-win32.zip
+          mv fteqw-macos-arm64-${{ steps.version.outputs.short_sha }}.zip fteqw-macos-arm64.zip
+          mv fteqw-web-${{ steps.version.outputs.short_sha }}.zip fteqw-web.zip
 
 
       - name: Upload dist tarball to release
