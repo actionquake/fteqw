@@ -66,6 +66,15 @@ jobs:
           name: make-macos-arm64
           skip_unpack: true
 
+      - name: Rename files for release
+        run: |
+          mv make-linux64.zip fteqw-linux64.zip
+          mv make-win64.zip fteqw-win64.zip
+          mv make-win32.zip fteqw-win32.zip
+          mv make-macos-arm64.zip fteqw-macos-arm64.zip
+          mv make-web.zip fteqw-web.zip
+
+
       - name: Upload dist tarball to release
         uses: softprops/action-gh-release@v1
         env:
@@ -74,9 +83,9 @@ jobs:
           body_path: 
           tag_name: ${{ steps.version.outputs.short_sha }}
           files: |
-            make-linux64-${{ steps.version.outputs.short_sha }}.zip
-            make-linuxaarch64-${{ steps.version.outputs.short_sha }}.zip
-            make-macos-arm64-${{ steps.version.outputs.short_sha }}.zip
-            make-web-${{ steps.version.outputs.short_sha }}.zip
-            make-win32-${{ steps.version.outputs.short_sha }}.zip
-            make-win64-${{ steps.version.outputs.short_sha }}.zip
+            fteqw-linux64.zip
+            fteqw-macos-arm64.zip
+            fteqw-web.zip
+            fteqw-win32.zip
+            fteqw-win64.zip
+

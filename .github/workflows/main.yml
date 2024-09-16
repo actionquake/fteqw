@@ -62,11 +62,11 @@ jobs:
             make_targets: "m-rel sv-rel qtv-rel qcc-rel"
             os: ubuntu-latest
             packages: "libasound2-dev libgl-dev libegl1-mesa-dev libwayland-dev libxcursor-dev libxi-dev libxkbcommon-dev libxrandr-dev libxss-dev"
-          - name: linuxaarch64
-            fte_target: linuxaarch64
-            make_targets: "m-rel sv-rel qtv-rel qcc-rel"
-            os: [self-hosted, ARM64]
-            packages: "libasound2-dev libgl-dev libegl1-mesa-dev libwayland-dev libxcursor-dev libxi-dev libxkbcommon-dev libxrandr-dev libxss-dev"
+          # - name: linuxaarch64
+          #   fte_target: linuxaarch64
+          #   make_targets: "m-rel sv-rel qtv-rel qcc-rel"
+          #   os: [self-hosted, ARM64]
+          #   packages: "libasound2-dev libgl-dev libegl1-mesa-dev libwayland-dev libxcursor-dev libxi-dev libxkbcommon-dev libxrandr-dev libxss-dev"
           - name: win32
             fte_target: win32
             make_targets: "m-rel sv-rel qcc-rel"
