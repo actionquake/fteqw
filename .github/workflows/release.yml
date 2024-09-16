@@ -17,7 +17,7 @@ jobs:
           ref: ${{ github.ref }}
 
       - name: version
-        run: echo "::set-output name=version::$(git rev-parse --short HEAD)"
+        run: echo "::set-output name=short_sha::$(git rev-parse --short HEAD)"
         id: version
         
       - name: release
